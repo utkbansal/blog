@@ -11,3 +11,6 @@ venv/
 *.pyc
 #database
 db.sqlite3
+
+#django summernote static files
+django-summernote
