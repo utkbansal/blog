@@ -1,0 +1,13 @@
+#pycharm
+.idea/
+#virtualenv
+venv/
+#temp files
+*~
+#swap files
+*.swp
+*.swo
+#byte-compiled files
+*.pyc
+#database
+db.sqlite3
