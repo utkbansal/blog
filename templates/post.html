@@ -3,7 +3,7 @@
 {% block heading %}
     <div class="post-heading">
         <h1>{{ object.title }}</h1>
-        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+        <span class="meta">Posted by <a href="#">{{ object.author.last_name }}</a> on August 24, 2014</span>
     </div>
 {% endblock %}
 {% block blog_entries %}

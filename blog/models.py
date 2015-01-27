@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
-
+from django.contrib.auth.models import User
 
 class EntryQuerySet(models.QuerySet):
     def published(self):
@@ -13,6 +13,7 @@ class Entry(models.Model):
     publish = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(User)
 
     objects = EntryQuerySet.as_manager()
 
