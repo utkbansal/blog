@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class EntryQuerySet(models.QuerySet):
@@ -13,10 +14,13 @@ class Entry(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
-    object = EntryQuerySet.as_manager()
+    objects = EntryQuerySet.as_manager()
 
     def __unicode__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('entry_detail', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Blog Entry'
